@@ -1,12 +1,14 @@
-import React from "react";
-import Interests from "./Interests";
+import React from 'react';
+import Interests from './Interests';
+import { useTheme } from '../context/user';
 
-function Profile({ user, theme }) {
-  if (!user) return <h2>Please Login To View Profile</h2>;
+function Profile() {
+  const { theme } = useTheme();
+
   return (
     <div>
-      <h2>{user.name}'s Profile</h2>
-      <Interests interests={user.interests} theme={theme} />
+      <h2>User's Profile</h2>
+      <Interests theme={theme} />
     </div>
   );
 }
